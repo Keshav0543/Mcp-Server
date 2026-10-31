@@ -1,9 +1,11 @@
 import "dotenv/config";
 import express from "express";
+import cors from "cors";
 import modelCall from "./config/model.js";
 import main from "../Backend/config/db.js";
 const app=express();
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/chat/model",async (req,res)=>{
